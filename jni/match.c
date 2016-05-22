@@ -13,7 +13,7 @@
 #define HAS_REGEX
 #endif
 
-#ifdef linux
+#if defined (linux) //# || defined (__ANDROID__)
 /* To avoid warning about re_comp / re_exec */
 /* Maybe this would work on other architectures too */
 #define _REGEX_RE_COMP

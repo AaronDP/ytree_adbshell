@@ -11,9 +11,7 @@
 
 
 #ifdef WIN32
-
 #include <pwd.h>
-
 #else
 
 typedef struct
@@ -36,8 +34,7 @@ static unsigned int  passwd_count;
 
 int ReadPasswdEntries(void)
 {
-#ifndef WIN32
-
+#if !defined(WIN32) && !defined(__ANDROID__)
   int i;
   struct passwd *pwd_ptr;
   
@@ -85,8 +82,7 @@ int ReadPasswdEntries(void)
     (void) strncpy( passwd_array[i].name, pwd_ptr->pw_name, OWNER_NAME_MAX );
      passwd_array[i].name[OWNER_NAME_MAX] = '\0';
   }
-
-#endif /* WIN32 */
+#endif /* ANDROID / WIN32 */
 
   return( 0 );
 }
@@ -97,7 +93,8 @@ int ReadPasswdEntries(void)
 char *GetPasswdName(unsigned int uid)
 {
 
-#ifdef WIN32
+/* # ifdef WIN32 */
+#if defined(WIN32) || defined(__ANDROID__)
 
   struct passwd *pwd_ptr;
 
@@ -118,7 +115,7 @@ char *GetPasswdName(unsigned int uid)
 
   return( NULL );
 
-#endif /* WIN32 */
+#endif /* ANDROID / WIN32 */
 
 }
 
@@ -127,7 +124,8 @@ char *GetPasswdName(unsigned int uid)
 
 int GetPasswdUid(char *name)
 {
-#ifdef WIN32
+/* # ifdef WIN32 */
+#if defined(WIN32) || defined(__ANDROID__)
 
   struct passwd *pwd_ptr;
 
@@ -148,7 +146,7 @@ int GetPasswdUid(char *name)
 
   return( -1 );
 
-#endif /* WIN32 */
+#endif /* ANDROID / WIN32 */
 
 }
 

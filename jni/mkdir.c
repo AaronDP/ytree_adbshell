@@ -59,9 +59,9 @@ int MakeDirEntry(DirEntry *father_dir_entry, char *dir_name )
   (void) strcat( buffer, FILE_SEPARATOR_STRING );
   (void) strcat( buffer, dir_name );
 
-  if( ( result = mkdir( buffer, (S_IREAD  |
-		                 S_IWRITE |
-		                 S_IEXEC  |
+  if( ( result = mkdir( buffer, ( S_IXUSR  |
+                                 S_IRUSR  |
+		                 S_IWUSR  |
 		                 S_IRGRP  |
 		                 S_IWGRP  |
 		                 S_IXGRP  |
@@ -250,9 +250,9 @@ int MakePath( DirEntry *tree, char *dir_path, DirEntry **dest_dir_entry )
 #endif /* DEBUG */
   
   
-      if( mkdir( path, S_IREAD  |
-		       S_IWRITE |
-		       S_IEXEC  |
+      if( mkdir( path, S_IRUSR  |
+		       S_IWUSR  |
+		       S_IXUSR  |
 		       S_IRGRP  |
 		       S_IWGRP  |
 		       S_IXGRP  |

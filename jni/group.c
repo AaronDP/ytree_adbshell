@@ -37,7 +37,8 @@ static unsigned int group_count;
 
 int ReadGroupEntries(void)
 {
-#ifndef WIN32
+/* # ifndef WIN32 */
+#if !defined(WIN32) && !defined(__ANDROID__)
 
   int i;
   struct group *grp_ptr;
@@ -87,7 +88,7 @@ int ReadGroupEntries(void)
     group_array[i].name[GROUP_NAME_MAX] = '\0';
   }
 
-#endif /* WIN32 */
+#endif /* ANDROID / WIN32 */
 
   return( 0 );
 }
@@ -97,7 +98,8 @@ int ReadGroupEntries(void)
 
 char *GetGroupName(unsigned int gid)
 {
-#ifdef WIN32
+/* # ifdef WIN32 */
+#if defined(WIN32) || defined(__ANDROID__)
 
   struct group *group_ptr;
 
@@ -118,7 +120,7 @@ char *GetGroupName(unsigned int gid)
 
   return( NULL );
 
-#endif /* WIN32 */
+#endif /* ANDROID / WIN32 */
 
 }
 
@@ -127,7 +129,8 @@ char *GetGroupName(unsigned int gid)
 
 int GetGroupId(char *name)
 {
-#ifdef WIN32
+/* # ifdef WIN32 */
+#if defined(WIN32) || defined(__ANDROID__)
 
   struct group *group_ptr;
 
@@ -147,7 +150,7 @@ int GetGroupId(char *name)
   }
   return( -1 );
 
-#endif /* WIN32 */
+#endif /* ANDROID / WIN32 */
 
 }
 

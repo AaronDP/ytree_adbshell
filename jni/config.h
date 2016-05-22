@@ -11,9 +11,9 @@
 #define DEFAULT_FILEMODE      "2"
 #define DEFAULT_NOSMALLWINDOW "0"
 #define DEFAULT_NUMBERSEP     "."
-#define DEFAULT_INITIALDIR    NULL
-#define DEFAULT_DIR1          NULL
-#define DEFAULT_DIR2          NULL
+#define DEFAULT_INITIALDIR    "/data/local/tmp/xbin/"
+#define DEFAULT_DIR1          "/sdcard/"
+#define DEFAULT_DIR2          "/storage/extSdCard/"
 #define DEFAULT_FILE1         NULL
 #define DEFAULT_FILE2         NULL
 
@@ -23,11 +23,11 @@
 /* UNIX-Kommandos */
 /*----------------*/
 
-#define DEFAULT_CAT        "cat"
-#define DEFAULT_EDITOR     "vi"
+#define DEFAULT_CAT        "cat" /* OK */
+#define DEFAULT_EDITOR     "nano" /* OK */
 #define DEFAULT_MELT       "melt"
 #define DEFAULT_UNCOMPRESS "uncompress"
-#define DEFAULT_GNUUNZIP   "gunzip -c"
+#define DEFAULT_GNUUNZIP   "gunzip -c" /* OK */
 #define DEFAULT_BUNZIP     "bunzip2"
 #define DEFAULT_MANROFF    "nroff -man"
 
@@ -35,7 +35,7 @@
 #define DEFAULT_ZOOEXPAND  "zoo xp"
 
 #define DEFAULT_ZIPLIST    "zipinfo -l"
-#define DEFAULT_ZIPEXPAND  "unzip -p"
+#define DEFAULT_ZIPEXPAND  "unzip -p" /* OK */
 
 #define DEFAULT_LHALIST    "xlharc v"
 #define DEFAULT_LHAEXPAND  "xlharc p"
@@ -56,16 +56,16 @@
  * extract to stdout!
  */
 
-#define DEFAULT_TARLIST    "gtar tvf -"
-#define DEFAULT_TAREXPAND  "gtar xOPf -"
+#define DEFAULT_TARLIST    "tar tvf -" /* OK -- was "gtar tvf -" */
+#define DEFAULT_TAREXPAND  "tar xOPf -" /* OK -- was "gtar xOPf -" */
 #define DEFAULT_RPMLIST    "rpm -q -l --dump -p"
 #define DEFAULT_RPMEXPAND  "builtin"
-#define DEFAULT_HEXDUMP    "hd"
+#define DEFAULT_HEXDUMP    "hd" /* OK -- also builtin, but busybox includes ascii */
 #define DEFAULT_PAGER      "more"
 
 #ifdef __DJGPP__
 #undef DEFAULT_PAGER
-#define DEFAULT_PAGER      "view"
+#define DEFAULT_PAGER      "view" /* available with ln -s vim view */
 #endif
 
 
