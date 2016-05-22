@@ -1,0 +1,19 @@
+Begin4
+Title:		ytree-1.98
+Version:	1.98
+Entered-date:	2014-12-07
+Description:	Ytree is a nifty filemanager similar to xtree.
+		With some helper-applications (zip/zoo/tar/rpm etc.)
+		you can also browse archive files. Viewers for
+		"special" files are configurable (*.wav, *.gif etc.).
+		Even the commands/menus are now user configurable.
+		For a screenshot visit http://www.han.de/~werner/ytree.html
+Keywords:	file manager, browser, xtree
+Author:		werner@frolix.han.de (Werner Bregulla)
+Maintained-by:	werner@frolix.han.de (Werner Bregulla)
+Primary-site:	sunsite.unc.edu /pub/Linux/utils/file/managers
+		ytree-1.98.tar.gz
+		ytree-1.98.lsm
+Alternate-site:	http://www.han.de/~werner/ytree.html
+Copying-policy:	GPL
+End
