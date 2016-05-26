@@ -22,5 +22,5 @@ MANESDIR    = $(DESTDIR)/lib/share/man/es/man1
 include $(BUILD_EXECUTABLE)
 
 all:
-
+	cp ../libs/armeabi/ytree /data/local/tmp/xbin
 #$(info $(shell (adb push ../libs/armeabi/ytree /data/local/tmp/xbin)))
